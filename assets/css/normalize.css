@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI';
+}
+
+body {
+  background: #ddd;
+}
+
+h1, h2, h3 {
+  font-size: 35px;
+  text-align: center;
+}
