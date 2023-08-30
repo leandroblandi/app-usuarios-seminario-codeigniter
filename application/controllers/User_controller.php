@@ -14,18 +14,25 @@ class User_Controller extends CI_Controller {
 		
 		$this->load->helper('url');
 
-		$data = array(
-			'username' => $this->input->post('username', true),
-			'password' => $this->input->post('password', true),
-			'email' => $this->input->post('email', true)
-		);
+		$username = $this->input->post('username', true);
+		$password = $this->input->post('password', true);
+		$email = $this->input->post('email', true);
 
-		if($this->user_model->saveUserOnDB($data)) {
-			redirect('User_controller');
+		if(!empty($username) && !empty($password) && !empty($email)) {
+			$data = array(
+				'username' => $username,
+				'password' => $password,
+				'email' => $email
+			);
+	
+			if($this->user_model->saveUserOnDB($data)) {
+				redirect('User_controller');
+			}
+			echo 'Error while creating user';
 		}
-
-		echo 'Error while creating user';
-
+		else {
+			echo "<h1>Error</h1><p>Los datos no pueden estar vacíos</p>";
+		}
 	}
 
 	public function formCreateUser() {
