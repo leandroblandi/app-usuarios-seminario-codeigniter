@@ -1,3 +1,7 @@
+body {
+  min-height: 100vh;
+}
+
 .container {
   margin: 20px auto;
   padding: 40px 30px;
@@ -27,7 +31,7 @@ table th {
 }
 
 tr {
-  height: 30px;
+  height: 50px;
 }
 
 table tr:nth-child(even) {
@@ -38,17 +42,76 @@ table tr:nth-child(odd) {
   background: #fff;
 }
 
-a.submit-btn {
-  border-radius: 3px;
-  text-decoration: none;
-  font-size: 15px;
-  background: #457a3b;
-  border: none;
-  padding: 10px 30px;
-  cursor: pointer;
-  color: #fff;
+a.modify-btn {
+  background: #ac8c35;
 }
 
-a.submit-btn:hover {
-  background: #589c4b;
+a.btn {
+  margin: 0 5px;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 13px;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  color: #fff;
+  transition: all .3s;
+}
+
+a.delete-btn {
+  background: #b14848;
+}
+
+a.modify-btn:hover {
+  transition: all .2s;
+  background: #d3ac3f;
+}
+
+a.delete-btn:hover {
+  transition: all .2s;
+  background: #db5353;
+}
+
+.no-users-info {
+  margin: 10px 0;
+}
+
+.no-users-info p.info {
+  font-size: 20px;
+}
+
+@media screen and (width < 1370px) {
+
+  .container {
+    width: 80%;
+  }
+  
+}
+
+@media screen and (width < 900px) {
+
+  .container {
+    width: 95%;
+  }
+  
+}
+
+@media screen and (width < 720px) {
+
+  table {
+    display: block;
+    font-size: 14px;
+    overflow-x: auto;
+
+  }
+
+  th, td {
+    white-space: nowrap;
+  }
+
+  a.btn {
+    font-size: 14px;
+    padding: 5px;
+  }
+  
 }

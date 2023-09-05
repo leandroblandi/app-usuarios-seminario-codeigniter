@@ -3,15 +3,41 @@
   background: #444;
   display: flex;
   align-items: center;
-  padding: 0 10px;
+  justify-content: space-between;
+  padding: 10px;
   user-select: none;
 }
 
-.nav-menu p {
+.nav-menu-icon {
+  display: flex;
+  align-items: center;
+  background: #444;
+
+}
+
+.nav-menu-icon a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  width: 30px;
+  color: #fff;
+}
+
+a.menu-icon {
+  display: none;
+}
+
+.nav-menu.show {
+  display: flex;
+}
+
+.nav-menu-icon p {
   color: #fff;
   font-weight: bold;
   display: block;
   padding-right: 20px;
+  padding: 30px;
 }
 
 .nav-menu ul {
@@ -22,13 +48,65 @@
   list-style: none;
 }
 
-.nav-menu ul li a {
+.nav-menu ul li a, .language-toggle a {
+  transition: all .3s;
   text-decoration: none;
   color: #fff;
   display: block;
-  padding: 20px;
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin: 0 5px;
 }
 
-.nav-menu ul li a:hover {
+.nav-menu ul li a:hover,.language-toggle a:hover  {
   background: #555;
+  transition: all .2s;
+}
+
+.nav-menu ul li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-menu ul li a i {
+  padding-right: 10px;
+}
+
+.language-toggle {
+  display: flex;
+}
+
+.language-toggle a {
+  text-decoration: none;
+  color: #fff;
+}
+
+@media screen and (width < 800px) {  
+
+  .nav-menu-icon a {
+    display: flex;
+    padding: 30px;
+  }
+
+  .nav-menu, .nav-menu ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-menu {
+    display: none;
+    align-items: flex-start;
+  }
+
+  .nav-menu ul li {
+    width: 100%;
+  }
+
+  .nav-menu ul li a {
+    justify-content: left;
+    align-items: flex-start;
+  }
+
+
 }
